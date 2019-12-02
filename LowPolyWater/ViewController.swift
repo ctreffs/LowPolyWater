@@ -95,7 +95,7 @@ class ViewController: UIViewController {
         boatNode.removeFromParentNode()
         boatNode.position = SCNVector3(x: 1024.0 * 6, y: 1024.0 * 3, z: 0.0)
         boatNode.scale = SCNVector3(x: 100.0, y: 100.0, z: 100.0)
-        boatNode.eulerAngles = SCNVector3(x: 90.0 * (.pi / 180.0), y: 0.0 , z: -35.0 * (.pi / 180.0))
+        boatNode.eulerAngles = SCNVector3(x: 90.0 * (.pi / 180.0), y: 0.0, z: -35.0 * (.pi / 180.0))
 
         scnView.scene!.rootNode.addChildNode(boatNode)
 
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
 
     private func showTiles() {
         scnView.scene!.rootNode.enumerateChildNodes {
-            (node, stop) in
+            (node, _) in
 
             if node.name!.starts(with: "water") {
                 SCNTransaction.begin()
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
 
     private func hideTiles() {
         scnView.scene!.rootNode.enumerateChildNodes {
-            (node, stop) in
+            (node, _) in
 
             if node.name!.starts(with: "water") {
                 SCNTransaction.begin()
